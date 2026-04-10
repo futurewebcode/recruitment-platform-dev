@@ -1,26 +1,27 @@
-import { useState } from 'react'
-
 /**
- * App 组件 - 主应用程序入口
+ * App 组件 - 主应用程序入口（配置路由）
  * @returns {React.JSX.Element} React 应用程序主组件
  */
-function App() {
-  const [count, setCount] = useState<number>(0)
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import JobList from './pages/JobList';
+import JobDetail from './pages/JobDetail';
+import ApplyJob from './pages/ApplyJob';
+import Profile from './pages/Profile';
 
+function App() {
   return (
-    <div className="app">
-      <h1>recruitment-platform-dev React App</h1>
-      <p>欢迎使用 React + TypeScript + Vite 基础框架</p>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/jobs" element={<JobList />} />
+        <Route path="/job/:id" element={<JobDetail />} />
+        <Route path="/apply/:id" element={<ApplyJob />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
