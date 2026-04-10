@@ -14,7 +14,7 @@ import { Job, Application } from '../types';
 const ApplyJob: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  
+
   const job: Job | undefined = mockJobs.find(j => j.id === Number(id));
   const [showSuccess, setShowSuccess] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -154,7 +154,7 @@ const ApplyJob: React.FC = () => {
           {/* 个人信息 */}
           <div className="form-section">
             <h3>个人信息</h3>
-            
+
             <div className="form-group">
               <label>姓名 *</label>
               <input
@@ -184,7 +184,7 @@ const ApplyJob: React.FC = () => {
           {/* 学历经验 */}
           <div className="form-section">
             <h3>学历经验</h3>
-            
+
             <div className="form-group">
               <label>学历 *</label>
               <select
