@@ -4,7 +4,6 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { mockJobs, jobCategories, jobLocations, salaryRanges } from '../data/mockData';
-import { Job } from '../types';
 
 /**
  * 职位列表页组件 - 展示所有职位，支持筛选和搜索

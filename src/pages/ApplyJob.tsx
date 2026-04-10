@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { mockJobs } from '../data/mockData';
 import { saveApplication, getUserProfile, saveUserProfile } from '../utils/storage';
-import { Job, Resume, Application } from '../types';
+import { Job, Application } from '../types';
 
 /**
  * 简历投递页组件 - 填写简历并提交投递
